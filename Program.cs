@@ -1,28 +1,39 @@
 ﻿using System;
 
-namespace sumOfnumberInArray
+namespace reverseOrderofNumbers
 {
     class Program
     {
         static void Main(string[] args)
+
         {
-            int n, sum = 0;
-            int[] numbers = new int[10];
 
-            for(n=0;n<10;n++)
+            int[] numbers = new int[5];
+            int[] reverse = new int[5];
+            int i;
+            for (i = 0; i < 5; i++)
             {
-                Console.WriteLine($"Enter {n+1} number: ");
-                numbers[n] = int.Parse(Console.ReadLine());
-                
-                sum += numbers[n];
+                Console.WriteLine($"Enter the number {i+1} : ");
+                numbers[i] = int.Parse(Console.ReadLine());
+            
+                while (numbers[i] > 0)
+                {
+                    reverse [i]= reverse[i] * 10+ numbers[i] % 10;
+                    numbers[i] = numbers[i] / 10;
+                }
+                    Console.WriteLine($"Reversed number : {reverse[i]}");
+                Console.WriteLine("");
+
+              
             }
-            Console.WriteLine($"Sum of all {n} numbers stored in array is : {sum}");
-            Console.ReadLine();
         }
-        
-
     }
-
-
-
 }
+
+
+
+
+
+
+
+
